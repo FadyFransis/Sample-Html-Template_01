@@ -1,9 +1,36 @@
 /* Start Global Variables */
+/* Start containers */
+.special-heading
+{
+    margin: 0;
+    text-align: center;
+    color: #ebeced;
+    font-size: 100px;
+    letter-spacing: -3px;
+}
+.special-heading + p 
+{
+    text-align: center;
+    margin: -30px;
+    color: #777;
+    font-weight: 400;
+    font-size: 18px;
+}
+/* End containers */
+
 *{
 --webkit-box-sizing:border-box  ;
 --moz-box-sizing:border-box  ;
  box-sizing: border-box;
 
+}
+:root
+{
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+    --main-duration: 0.5s;
 }
 html{
     scroll-behavior: smooth;
@@ -34,13 +61,30 @@ ul
     margin-left: auto;
     margin-right: auto;
 }
+/* Extra small */
+@media (min-width:320px)
+{
+    .container
+    {
+        width:300px;
+    }
+    .special-heading
+    {
+        /* font-size: 60px; */
+    }
+    .special-heading + p 
+    {
+    margin-top: -20px;
+    }
+}
 /* Small */
-@media (min-width:768px)
+@media (min-width:767px)
 {
     .container
     {
         width:750px;
     }
+
 }
 /* Large */
 @media (min-width:992px)
@@ -56,6 +100,10 @@ ul
     .container
     {
         width:1170px;
+    }
+    .special-heading
+    {
+        font-size: 100px;
     }
 }
 /* End Global Variables */
@@ -81,6 +129,7 @@ ul
     display:flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    cursor: pointer;
 }
 .header .links .icon span{
     margin-bottom: 5px;
@@ -104,4 +153,158 @@ ul
 {
  width: 100%;
 }
+.header .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    background-color: #f2f2f2;
+    text-decoration: none;
+    top: calc(100% + 15px);
+    display: none; 
+    
+}
+.header .links:hover ul
+{
+    z-index: 1;
+   display: block;
+}
+.header .links ul::before {
+    content: '';
+    content: '';
+    border-width: 10px
+;
+    border-style: solid;
+    border-color: transparent transparent #f2f2f2 transparent;
+    position: absolute;
+    right: 5px
+;
+    top: -20px
+;
+}
+.header .links ul li a 
+{
+    display: block;
+    text-decoration: none;
+    padding:15px;
+    color:#333;
+    transition:0.3s
+}
+.header .links ul li a:hover 
+{
+    padding-left: 25px;
+}
+.header .links ul li:not(last-child) a 
+{
+   border-bottom: 1px solid #ddd;
+}
+.landing{
+    background-image: url('/images/landing.jpg');
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+    
+}
+.landing .intro-text  {
+    position: absolute;
+    top:50%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width: 100%;
+}
+.landing .intro-text h1  {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 50px;
+    color:   var(--main-color)
+}
+.landing .intro-text p
+{
+  font-size: 19px;
+  line-height: 1.8;
+}
 /* End Header */
+
+/* Start Feature */
+.features
+{
+    background-color: var(--section-background);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.features .container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+.features  .feat
+{
+    padding:20px;
+    text-align: center;
+}
+.features .feat h3
+{
+    text-transform: capitalize;
+    font-weight: 800;
+    margin: 30px 0;
+}
+.features .feat i
+{
+    color: var(--main-color);
+}
+.features .feat p
+{
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color:#777;
+}
+
+/* End Feature */
+/* Start Services  */
+.services
+{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+
+}
+.services .services-content
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top:120px;
+}
+.services .services-content .srv
+{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.services .srv  i 
+{
+color:var(--main-color);
+flex-basis: 60px;
+}
+.services .text h3
+{
+margin:0 0 20px
+}
+.services .text p 
+{
+color:#666
+}
+@media (max-width:767px) {
+ .services .services-content .srv
+    {
+        text-align: center;
+       flex-direction: column;
+    }
+   
+}
+ /* End Services  */
+
