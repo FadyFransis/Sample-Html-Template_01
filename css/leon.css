@@ -70,7 +70,7 @@ ul
     }
     .special-heading
     {
-        /* font-size: 60px; */
+         font-size: 60px; 
     }
     .special-heading + p 
     {
@@ -366,7 +366,11 @@ margin:0 0 20px
  .portofolio  .text  
  {
     text-align: left;
-    padding-left:20px
+    padding-left:20px;
+    margin-top: 24px;
+    margin-bottom: 24px
+
+    ;
  }
  .portofolio  .text   h3
  {
@@ -376,11 +380,112 @@ margin:0 0 20px
  {
     color: #777;
  }
- /* 
+
  .portofolio  .text  h3
  {
     margin: 0;
  }
  /* End  Portofolio */
+/* Start About */
+.about
+{
+    padding-top: var(--section-padding);
+    padding-bottom:  calc(var(--section-padding) + 60px);
+
+}
+.about .about-content
+{
+     display: flex;
+     margin-top: 100px;
+     flex-wrap: wrap;
+     justify-content: space-between;
+
+}
+@media (max-width:813px) {
+    .about .about-content
+{
+    flex-direction: column;
+    text-align: center;
+
+
+}
+}
+.about .image
+{
+    position: relative;
+    width: 260px;
+    height: 375;
+}
+@media (max-width:813px) {
+    .about .image
+{
+    margin: 0 auto 80px;
+    width: 300px;
+    height: 375;
+
+}
+.about .image::before,
+.about .image::after
+{
+    display: none;
+}
+}
+.about .image img{
+
+    max-width: 100%;
+}
+
+.about .image::before
+{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 80px);
+    top:-40px;
+    left: -20px;
+    background-color:#ebeced;
+    z-index: -1;
+}
+.about .image::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 310px;
+            border-left: 80px solid var(--main-color);
+            border-bottom: 80px solid var(--main-color);
+            z-index: -1;
+            top: -40px;
+            right: -160px;
+}
+@media (max-width:813px) {
+    .about .about-content
+{
+    flex-direction: column;
+    text-align: center;
+
+}
+}
+.about .about-content .text
+{
+    flex-basis: calc(100% - 500px);
+}
+.about .about-content .text p:first-child
+{    font-weight: 600;
+    line-height: 1.8;
+    font-size: 15px;
+    padding-bottom: 50px
+;}
+.about .about-content .text p:last-child
+{    
+    color:#777;
+    line-height: 1.9;
+}
+.about .about-content .text hr
+{    
+    border-color: var(--main-color);
+    width: 70%;
+    display: inline-block;
+}
+/* End About */
 
 
